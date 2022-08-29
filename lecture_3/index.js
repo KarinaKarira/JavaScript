@@ -1,8 +1,10 @@
 // console.log('hi')
+
+//FETCHING MULTIPLE ELEMENTS
 // const headingsTN=document.getElementsByTagName('h1');
 // console.log(headingsTN)
 
-// //below gives an error
+// //below gives an error because getElementsByTagName returns a HTMLCollection that is not iterable,so we need to first convert it into array using Array.from()
 // // headingsTN.forEach(elem => {
 // //     console.log(elem)
 // // });
@@ -18,6 +20,7 @@
 
 // //there is no method as getElementsById,getElementByClassName,getElementByTagName
 
+//FETCHING SINGLE ELEMENT THAT IS ONLY POSSIBLE WITH THE HELP OF ID.
 // const elemT=document.getElementById('first-title')
 // console.log(elemT)
 
@@ -28,8 +31,9 @@
 // const elemID=document.querySelector('#first-title')
 // console.log(elemID)
 
+//querySelector fetches the first element that matches the parameter.If we want all the elements in return we use querySelectorAll
 // const elemTag=document.querySelector('h1')
-// console.log(elemID)
+// console.log(elemTag)
 
 // const elemsClass=document.querySelectorAll('.title')
 // console.log(elemsClass)
@@ -37,8 +41,9 @@
 // elemsClass.forEach(val => console.log(val))
 
 
-// //we can get any attribute using element.attribute for class attirbute we need to access it using 'className'
+// //we can get any attribute using element.attribute.For class attirbute we need to access it using 'className'
 // //setTimeOut function is used just to differentiate,there wasn't any need of it
+//But this method overwrites the classes,if we want to preserve the previous ones too we use classList.add()
 // const ft = document.querySelector('#first-title')
 // console.log(ft.classList)
 // setTimeout(() => {ft.className='red',console.log(ft.classList)},4000)
@@ -64,8 +69,8 @@
 // //body ko hum document.querySelector se bhi access kar skte hai but hume direct access hota hai body ka as in document.body
 // setTimeout(()=>{document.body.innerHTML=``},8000)
 
-
-const clickbtn=document.querySelector('.clickbtn')
+// //EVENTS
+// const clickbtn=document.querySelector('.clickbtn')
 // clickbtn.addEventListener('click',(e)=>{
 //     // const elemstn = document.querySelectorAll('h1')
 //     // elemstn[3].innerHTML=`<i>helllooo</i>`
@@ -83,7 +88,7 @@ const clickbtn=document.querySelector('.clickbtn')
 // })
 
 
-//mouseenter gives 
+// mouseenter gives 
 // clickbtn.addEventListener('mouseenter',(e)=>{
 //     // const elemstn = document.querySelectorAll('h1')
 //     // elemstn[3].innerHTML=`<i>helllooo</i>`
@@ -93,12 +98,16 @@ const clickbtn=document.querySelector('.clickbtn')
 // })
 
 // const ip=document.querySelector('#name')
-clickbtn.addEventListener('click',()=>{
-    console.log(ip.value)
-})
+// clickbtn.addEventListener('click',()=>{
+//     console.log(ip.value)
+// })
 
 const ip=document.querySelector('#name')
-ip.addEventListener('input',(e)=>{
+// ip.addEventListener('input',(e)=>{
+//     const para=document.querySelector('#para')
+//     para.innerHTML=e.target.value
+// })
+ip.addEventListener('change',(e)=>{
     const para=document.querySelector('#para')
     para.innerHTML=e.target.value
 })
