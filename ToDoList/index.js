@@ -68,10 +68,12 @@ addBtn.addEventListener('click',()=>{
    const para=document.createElement('p')
    para.textContent=addEventInput.value
    para.classList.add('col-md-2')
+   para.classList.add('col-2')
    row.appendChild(para)
 
    const delPara=document.createElement('p')
    delPara.classList.add('col-md-10')
+   delPara.classList.add('col-10')
    row.appendChild(delPara)
    const btn=document.createElement('button')
    btn.classList.add(count)
@@ -93,7 +95,7 @@ addBtn.addEventListener('click',()=>{
         delButton.addEventListener('click',delEvent)
     }
 })
-function delEvent(e,id){
+function delEvent(e){
     let classes=e.target.classList
     console.log(classes)
     let idBtnClicked=classes[0]
@@ -101,6 +103,7 @@ function delEvent(e,id){
     let eventSelected=eventsObj[Number(idBtnClicked)]
     eventSelected.classList.add('done')
     console.log('delete clicked')
+    e.target.disabled=true
 }
 
 

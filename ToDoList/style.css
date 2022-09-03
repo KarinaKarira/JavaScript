@@ -3,4 +3,6 @@
 }
 body{
     background-image: url('ToDoListBackgroundImage.webp');
+    background-size: cover ;
+    background-repeat: no-repeat;
 }
