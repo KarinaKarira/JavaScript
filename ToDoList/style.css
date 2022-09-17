@@ -1,8 +1,9 @@
 .done{
-    text-decoration: line-through;
+    text-decoration:line-through;
+    color:black;
 }
-body{
+/* body{
     background-image: url('ToDoListBackgroundImage.webp');
     background-size: cover ;
     background-repeat: no-repeat;
-}
+} */
